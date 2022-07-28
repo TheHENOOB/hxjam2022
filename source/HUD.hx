@@ -2,9 +2,12 @@ package;
 
 import flixel.group.FlxSpriteGroup;
 import flixel.text.FlxText;
+import flixel.util.FlxColor;
 
 class HUD extends FlxSpriteGroup
 {
+	public var timer:Float;
+
 	var _timerSprite:FlxText;
 
 	public function new(X:Float, Y:Float)
@@ -17,7 +20,16 @@ class HUD extends FlxSpriteGroup
 
 	override function update(elapsed:Float)
 	{
-		_timerSprite.text = Std.string(Math.floor(PlayState.timer));
+		_timerSprite.text = Std.string(Math.floor(timer));
+
+		if (timer <= 0)
+		{
+			_timerSprite.color = FlxColor.RED;
+		}
+		else
+		{
+			_timerSprite.color = FlxColor.WHITE;
+		}
 
 		super.update(elapsed);
 	}

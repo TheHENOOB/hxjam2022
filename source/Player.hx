@@ -7,7 +7,7 @@ using flixel.util.FlxSpriteUtil;
 
 class Player extends FlxSprite
 {
-	static inline var gravity = 900;
+	static inline var gravity = PlayState.gravity;
 	static inline var speed = 75;
 	static inline var maxSpeed = 300;
 	static inline var jumpForce = 150;
